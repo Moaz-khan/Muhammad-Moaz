@@ -10,42 +10,42 @@ const projects = [
     id: 1,
     name: "E-Commerce Platform",
     category: "NextJs · Tailwind · Typescript · Node.js",
-    image: "./../public/projects/nikill.png",
+    image: "/projects/nikill.png",
     url: "https://nikill-s7iu.vercel.app/",
   },
   {
     id: 2,
     name: "SaaS Dashboard UI",
     category: "React · Tailwind · TypeScript",
-    image: "./../public/projects/spectrum.png",
+    image: "/projects/spectrum.png",
     url: "https://spectrum-dashboard-xi.vercel.app/",
   },
   {
     id: 3,
     name: "Dev Blog Platform",
     category: "Docusaurus · Markdown · Python",
-    image: "./../public/projects/Robotic.png",
+    image: "/projects/Robotic.png",
     url: "https://physical-ai-humanoid-robotics2-0.vercel.app/",
   },
   {
     id: 4,
     name: "Portfolio Site",
     category: "Next.js · Tailwind · TypeScript",
-    image: "./../public/projects/tahanajam2.png",
+    image: "/projects/tahanajam2.png",
     url: "https://www.tahanajam.co/",
   },
   {
     id: 5,
     name: "Agency Website",
     category: "Next.js · Tailwind · Node.js",
-    image: "./../public/projects/vibe bureau.png",
+    image: "/projects/vibe bureau.png",
     url: "https://www.vibebureau.com/",
   },
   {
     id: 6,
     name: "Product Landing Page",
     category: "Next.js · Tailwind · TypeScript",
-    image: "./../public/projects/taskopilot.png",
+    image: "/projects/taskopilot.png",
     url: "https://task-pilot-orpin.vercel.app/",
   },
 ];
@@ -104,9 +104,8 @@ export function Projects({ isDark }: ProjectsProps) {
               key={project.id}
               variants={cardVariants}
               whileHover={{ y: -6, transition: { duration: 0.2 } }}
-              className={`group relative overflow-hidden cursor-pointer transition-shadow duration-300 ${
-                isDark ? "bg-[#1a1a1a] hover:shadow-xl" : "bg-white hover:shadow-xl"
-              } shadow-md`}
+              className={`group relative overflow-hidden cursor-pointer transition-shadow duration-300 ${isDark ? "bg-[#1a1a1a] hover:shadow-xl" : "bg-white hover:shadow-xl"
+                } shadow-md`}
             >
               {/* Image Container */}
               <div className="relative overflow-hidden aspect-[4/3] bg-gray-200 dark:bg-gray-800">
@@ -118,7 +117,7 @@ export function Projects({ isDark }: ProjectsProps) {
                 />
                 {/* Overlay */}
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-300" />
-                
+
                 {/* External Link Button */}
                 <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <a

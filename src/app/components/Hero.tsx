@@ -2,8 +2,7 @@ import { useRef } from "react";
 import { motion, useScroll, useTransform } from "motion/react";
 import { ArrowRight, Github, Linkedin, Twitter } from "lucide-react";
 
-const HERO_PHOTO = "./../public/newprofile2.png";
-
+const HERO_PHOTO = "/newprofile2.png";
 interface HeroProps {
   isDark: boolean;
 }
@@ -72,9 +71,8 @@ export function Hero({ isDark }: HeroProps) {
       {/* Right: Text Content Section */}
       <motion.div
         style={{ y: textY, opacity }}
-        className={`flex flex-col justify-center px-5 sm:px-6 md:px-12 lg:px-20 py-16 sm:py-20 md:py-0 ${
-          isDark ? "bg-[#1a1a1a] text-white" : "bg-white text-black"
-        }`}
+        className={`flex flex-col justify-center px-5 sm:px-6 md:px-12 lg:px-20 py-16 sm:py-20 md:py-0 ${isDark ? "bg-[#1a1a1a] text-white" : "bg-white text-black"
+          }`}
       >
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -95,7 +93,7 @@ export function Hero({ isDark }: HeroProps) {
           {/* Main Heading - Responsive Typography */}
           <h1
             className="leading-[0.85] md:leading-[0.9] uppercase text-5xl sm:text-6xl md:text-6xl lg:text-7xl font-bold"
-            
+
           >
             CREATIVE
             <br />
@@ -106,9 +104,8 @@ export function Hero({ isDark }: HeroProps) {
 
           {/* Description - Mobile Optimized */}
           <p
-            className={`text-sm sm:text-base leading-relaxed max-w-sm ${
-              isDark ? "text-gray-400" : "text-gray-600"
-            }`}
+            className={`text-sm sm:text-base leading-relaxed max-w-sm ${isDark ? "text-gray-400" : "text-gray-600"
+              }`}
           >
             I build fast, responsive, and SEO-friendly web applications using React, Next.js, Node.js, and modern web technologies. From business websites to custom web platforms, I focus on creating scalable digital experiences.
           </p>
@@ -124,11 +121,10 @@ export function Hero({ isDark }: HeroProps) {
             </a>
             <a
               href="#about"
-              className={`inline-flex items-center justify-center gap-2 border-2 px-3 sm:px-8 py-3 sm:py-4 font-semibold transition-all duration-200 uppercase tracking-wider text-[10px] sm:text-xs group flex-1 text-center whitespace-nowrap ${
-                isDark
+              className={`inline-flex items-center justify-center gap-2 border-2 px-3 sm:px-8 py-3 sm:py-4 font-semibold transition-all duration-200 uppercase tracking-wider text-[10px] sm:text-xs group flex-1 text-center whitespace-nowrap ${isDark
                   ? "border-white text-white hover:bg-white hover:text-black"
                   : "border-black text-black hover:bg-black hover:text-white"
-              }`}
+                }`}
             >
               About Me
             </a>
@@ -143,9 +139,8 @@ export function Hero({ isDark }: HeroProps) {
             ].map((stat, i) => (
               <div
                 key={i}
-                className={`flex-1 text-center py-2 sm:py-0 ${
-                  i > 0 ? `border-l ${isDark ? "border-gray-800" : "border-gray-100"}` : ""
-                }`}
+                className={`flex-1 text-center py-2 sm:py-0 ${i > 0 ? `border-l ${isDark ? "border-gray-800" : "border-gray-100"}` : ""
+                  }`}
               >
                 <p
                   className="text-lg sm:text-2xl font-bold"
