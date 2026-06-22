@@ -48,11 +48,6 @@ export function WorkingProcess() {
           </p>
           <h2
             className="uppercase leading-tight sm:leading-tight md:leading-none"
-            style={{
-              fontFamily: "'Sora', sans-serif",
-              fontWeight: 700,
-              fontSize: "clamp(2rem, 8vw, 3.5rem)",
-            }}
           >
             MY WORKING
             <br />

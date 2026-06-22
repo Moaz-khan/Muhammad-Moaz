@@ -43,10 +43,6 @@ export function Blog({ isDark }: BlogProps) {
           </p>
           <h2
             className="uppercase leading-tight md:leading-none text-4xl sm:text-5xl md:text-5xl lg:text-6xl font-bold"
-            style={{
-              fontFamily: "'Sora', sans-serif",
-              fontSize: "clamp(2rem, 8vw, 3.5rem)",
-            }}
           >
             LATEST NEWS FROM
             <br />
@@ -68,9 +64,8 @@ export function Blog({ isDark }: BlogProps) {
               variants={cardVariants}
               whileHover={{ y: -6, transition: { duration: 0.2 } }}
               onClick={() => handleBlogClick(post.slug)}
-              className={`group overflow-hidden cursor-pointer transition-shadow duration-300 rounded-lg ${
-                isDark ? "bg-[#1a1a1a] hover:shadow-xl" : "bg-white hover:shadow-xl"
-              } shadow-md`}
+              className={`group overflow-hidden cursor-pointer transition-shadow duration-300 rounded-lg ${isDark ? "bg-[#1a1a1a] hover:shadow-xl" : "bg-white hover:shadow-xl"
+                } shadow-md`}
             >
               {/* Image Container */}
               <div className="relative overflow-hidden aspect-[16/10] bg-gray-200 dark:bg-gray-800">

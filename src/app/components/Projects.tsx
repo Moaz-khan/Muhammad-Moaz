@@ -80,10 +80,6 @@ export function Projects({ isDark }: ProjectsProps) {
           </p>
           <h2
             className="uppercase leading-tight md:leading-none text-4xl sm:text-5xl md:text-5xl lg:text-6xl font-bold"
-            style={{
-              fontFamily: "'Sora', sans-serif",
-              fontSize: "clamp(2rem, 8vw, 3.5rem)",
-            }}
           >
             TAKE A LOOK AT MY
             <br />

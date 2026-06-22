@@ -77,10 +77,6 @@ export function Testimonials({ isDark }: TestimonialsProps) {
           </p>
           <h2
             className="uppercase leading-tight md:leading-none text-4xl sm:text-5xl md:text-5xl lg:text-6xl font-bold"
-            style={{
-              fontFamily: "'Sora', sans-serif",
-              fontSize: "clamp(2rem, 8vw, 3.5rem)",
-            }}
           >
             WHAT MY CLIENTS
             <br />
@@ -119,9 +115,8 @@ export function Testimonials({ isDark }: TestimonialsProps) {
 
               {/* Testimonial Text - Mobile Optimized */}
               <p
-                className={`text-sm sm:text-base md:text-lg leading-relaxed sm:leading-relaxed mb-6 sm:mb-8 italic ${
-                  isDark ? "text-gray-300" : "text-gray-700"
-                }`}
+                className={`text-sm sm:text-base md:text-lg leading-relaxed sm:leading-relaxed mb-6 sm:mb-8 italic ${isDark ? "text-gray-300" : "text-gray-700"
+                  }`}
               >
                 "{t.text}"
               </p>
@@ -158,11 +153,10 @@ export function Testimonials({ isDark }: TestimonialsProps) {
                   setDirection(i > current ? 1 : -1);
                   setCurrent(i);
                 }}
-                className={`transition-all duration-300 touch-manipulation ${
-                  i === current
+                className={`transition-all duration-300 touch-manipulation ${i === current
                     ? "w-6 sm:w-8 h-1 bg-[#FF4757]"
                     : `w-3 sm:w-4 h-1 ${isDark ? "bg-gray-700" : "bg-gray-300"}`
-                }`}
+                  }`}
                 aria-label={`Go to testimonial ${i + 1}`}
               />
             ))}
@@ -172,9 +166,8 @@ export function Testimonials({ isDark }: TestimonialsProps) {
           <div className="flex gap-2 sm:gap-2 justify-center sm:justify-end">
             <button
               onClick={prev}
-              className={`w-10 h-10 sm:w-11 sm:h-11 border flex items-center justify-center hover:bg-[#FF4757] hover:border-[#FF4757] hover:text-white transition-all duration-200 touch-manipulation ${
-                isDark ? "border-gray-700 text-gray-400" : "border-gray-200 text-gray-600"
-              }`}
+              className={`w-10 h-10 sm:w-11 sm:h-11 border flex items-center justify-center hover:bg-[#FF4757] hover:border-[#FF4757] hover:text-white transition-all duration-200 touch-manipulation ${isDark ? "border-gray-700 text-gray-400" : "border-gray-200 text-gray-600"
+                }`}
               aria-label="Previous testimonial"
             >
               <ChevronLeft size={18} className="sm:w-[20px] sm:h-[20px]" />
@@ -182,9 +175,8 @@ export function Testimonials({ isDark }: TestimonialsProps) {
 
             <button
               onClick={next}
-              className={`w-10 h-10 sm:w-11 sm:h-11 border flex items-center justify-center hover:bg-[#FF4757] hover:border-[#FF4757] hover:text-white transition-all duration-200 touch-manipulation ${
-                isDark ? "border-gray-700 text-gray-400" : "border-gray-200 text-gray-600"
-              }`}
+              className={`w-10 h-10 sm:w-11 sm:h-11 border flex items-center justify-center hover:bg-[#FF4757] hover:border-[#FF4757] hover:text-white transition-all duration-200 touch-manipulation ${isDark ? "border-gray-700 text-gray-400" : "border-gray-200 text-gray-600"
+                }`}
               aria-label="Next testimonial"
             >
               <ChevronRight size={18} className="sm:w-[20px] sm:h-[20px]" />
