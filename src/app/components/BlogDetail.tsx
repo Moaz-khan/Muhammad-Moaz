@@ -37,21 +37,32 @@ export function BlogDetail({ isDark }: BlogDetailProps) {
   }
 
   return (
-<div
-  className={`min-h-screen pt-24 ${
-    isDark ? "bg-[#0a0a0a]" : "bg-white"
-  }`}
->
+    <div
+      className={`min-h-screen pt-20 sm:pt-24 ${isDark ? "bg-[#0a0a0a]" : "bg-white"
+        }`}
+    >
       {/* Hero Section */}
       <motion.section
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.6 }}
-        className={`px-6 py-12 ${isDark ? "bg-[#0d0d0d]" : "bg-gray-50"}`}
+        className={`px-4 sm:px-6 py-8 sm:py-12 ${isDark ? "bg-[#0d0d0d]" : "bg-gray-50"}`}
       >
         <div className="max-w-3xl mx-auto">
+          {/* Back Button */}
+          <div className="mb-6">
+            <button
+              onClick={() => navigate("/")}
+              className={`inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider transition-colors duration-200 group ${isDark ? "text-gray-400 hover:text-white" : "text-gray-600 hover:text-black"
+                }`}
+            >
+              <ArrowLeft size={14} className="transition-transform duration-200 group-hover:-translate-x-1" />
+              Back to Home
+            </button>
+          </div>
+
           {/* Image */}
-          <div className="mb-8 overflow-hidden rounded-lg h-96">
+          <div className="mb-6 sm:mb-8 overflow-hidden rounded-lg h-56 sm:h-80 md:h-[400px]">
             <img
               src={post.image}
               alt={post.title}
@@ -60,36 +71,35 @@ export function BlogDetail({ isDark }: BlogDetailProps) {
           </div>
 
           {/* Meta Information */}
-          <div className={`flex flex-wrap items-center gap-6 mb-6 ${isDark ? "text-gray-400" : "text-gray-600"}`}>
-            <span className="flex items-center gap-2 text-sm">
-              <Clock size={14} />
+          <div className={`flex flex-wrap items-center gap-3 sm:gap-6 mb-4 sm:mb-6 ${isDark ? "text-gray-400" : "text-gray-600"}`}>
+            <span className="flex items-center gap-1.5 text-xs sm:text-sm">
+              <Clock size={13} />
               {post.readTime}
             </span>
-            <span className="flex items-center gap-2 text-sm">
-              <Tag size={14} />
+            <span className="flex items-center gap-1.5 text-xs sm:text-sm">
+              <Tag size={13} />
               {post.date}
             </span>
-            <span className="bg-[#FF4757] text-white text-xs font-bold px-3 py-1 uppercase tracking-wider rounded">
+            <span className="bg-[#FF4757] text-white text-[10px] sm:text-xs font-bold px-2 py-0.5 sm:px-3 sm:py-1 uppercase tracking-wider rounded">
               {post.tag}
             </span>
           </div>
 
           {/* Title */}
-          <h1
-            className={`text-4xl md:text-5xl font-bold leading-tight mb-6 ${isDark ? "text-white" : "text-black"}`}
-            style={{ fontFamily: "'Sora', sans-serif" }}
+          <p
+            className={`text-lg sm:text-lg md:text-4xl lg:text-5xl font-bold leading-tight mb-6 ${isDark ? "text-white" : "text-black"}`}
           >
             {post.title}
-          </h1>
+          </p>
 
           {/* Author */}
-          <div className={`flex items-center gap-3 pb-8 border-b ${isDark ? "border-gray-800 text-gray-400" : "border-gray-200 text-gray-600"}`}>
-            <div className="w-10 h-10 bg-[#FF4757] rounded-full flex items-center justify-center text-white font-bold">
+          <div className={`flex items-center gap-3 pb-6 sm:pb-8 border-b ${isDark ? "border-gray-800 text-gray-400" : "border-gray-200 text-gray-600"}`}>
+            <div className="w-9 h-9 sm:w-10 sm:h-10 bg-[#FF4757] rounded-full flex items-center justify-center text-white font-bold text-sm sm:text-base">
               {post.author.charAt(0)}
             </div>
             <div>
-              <p className={`font-semibold ${isDark ? "text-white" : "text-black"}`}>{post.author}</p>
-              <p className="text-sm">Web Developer</p>
+              <p className={`font-semibold text-sm sm:text-base ${isDark ? "text-white" : "text-black"}`}>{post.author}</p>
+              <p className="text-xs sm:text-sm">Web Developer</p>
             </div>
           </div>
         </div>
@@ -100,11 +110,11 @@ export function BlogDetail({ isDark }: BlogDetailProps) {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.2 }}
-        className={`px-6 py-16 ${isDark ? "bg-[#0a0a0a]" : "bg-white"}`}
+        className={`px-4 sm:px-6 py-10 sm:py-16 ${isDark ? "bg-[#0a0a0a]" : "bg-white"}`}
       >
         <article className="max-w-3xl mx-auto">
           <div
-            className={`text-base leading-relaxed space-y-6 ${isDark ? "text-gray-300" : "text-gray-700"}`}
+            className={`text-sm sm:text-base leading-relaxed space-y-4 sm:space-y-6 ${isDark ? "text-gray-300" : "text-gray-700"}`}
             style={{ fontFamily: "'Inter', sans-serif" }}
             dangerouslySetInnerHTML={{
               __html: post.content
@@ -112,13 +122,13 @@ export function BlogDetail({ isDark }: BlogDetailProps) {
                 .map((paragraph: string) => {
                   // Handle headers
                   if (paragraph.startsWith("# ")) {
-                    return `<h2 class="${isDark ? "text-white" : "text-black"} text-3xl font-bold my-8 mt-12">${paragraph.replace("# ", "")}</h2>`;
+                    return `<h2 class="${isDark ? "text-white" : "text-black"} text-xl sm:text-2xl md:text-3xl font-bold my-6 mt-10 sm:my-8 sm:mt-12">${paragraph.replace("# ", "")}</h2>`;
                   }
                   if (paragraph.startsWith("## ")) {
-                    return `<h3 class="${isDark ? "text-white" : "text-black"} text-2xl font-bold my-6 mt-10">${paragraph.replace("## ", "")}</h3>`;
+                    return `<h3 class="${isDark ? "text-white" : "text-black"} text-lg sm:text-xl md:text-2xl font-bold my-5 mt-8 sm:my-6 sm:mt-10">${paragraph.replace("## ", "")}</h3>`;
                   }
                   if (paragraph.startsWith("### ")) {
-                    return `<h4 class="${isDark ? "text-white" : "text-black"} text-xl font-bold my-4 mt-8">${paragraph.replace("### ", "")}</h4>`;
+                    return `<h4 class="${isDark ? "text-white" : "text-black"} text-base sm:text-lg md:text-xl font-bold my-4 mt-6 sm:my-4 sm:mt-8">${paragraph.replace("### ", "")}</h4>`;
                   }
 
                   // Handle code blocks
@@ -127,7 +137,7 @@ export function BlogDetail({ isDark }: BlogDetailProps) {
                     if (codeMatch) {
                       const code = codeMatch[1].trim();
                       const codeContent = code.split("\n").slice(1).join("\n");
-                      return `<pre class="${isDark ? "bg-[#1a1a1a]" : "bg-gray-100"} p-4 rounded-lg overflow-x-auto my-6"><code class="text-sm">${codeContent}</code></pre>`;
+                      return `<pre class="${isDark ? "bg-[#1a1a1a]" : "bg-gray-100"} p-3 sm:p-4 rounded-lg overflow-x-auto my-5 sm:my-6"><code class="text-xs sm:text-sm">${codeContent}</code></pre>`;
                     }
                   }
 
@@ -135,11 +145,11 @@ export function BlogDetail({ isDark }: BlogDetailProps) {
                   if (paragraph.startsWith("- ")) {
                     const items = paragraph.split("\n").filter((line: string) => line.startsWith("- "));
                     const listHTML = items.map((item: string) => `<li>${item.replace("- ", "")}</li>`).join("");
-                    return `<ul class="list-disc list-inside my-4 space-y-2">${listHTML}</ul>`;
+                    return `<ul class="list-disc list-outside pl-5 my-4 space-y-1.5 sm:space-y-2">${listHTML}</ul>`;
                   }
 
                   // Regular paragraphs
-                  return `<p class="my-4">${paragraph}</p>`;
+                  return `<p class="my-3 sm:my-4">${paragraph}</p>`;
                 })
                 .join(""),
             }}
@@ -153,7 +163,7 @@ export function BlogDetail({ isDark }: BlogDetailProps) {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.7 }}
-        className={`py-28 px-6 relative overflow-hidden ${isDark ? "bg-[#0d0d0d]" : "bg-gray-50"}`}
+        className={`py-16 sm:py-24 md:py-28 px-4 sm:px-6 relative overflow-hidden ${isDark ? "bg-[#0d0d0d]" : "bg-gray-50"}`}
       >
         {/* Background accent */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -162,13 +172,13 @@ export function BlogDetail({ isDark }: BlogDetailProps) {
         </div>
 
         <div className="max-w-4xl mx-auto relative z-10 text-center">
-          <p className="text-[#FF4757] text-xs font-bold tracking-[0.3em] uppercase mb-6">
+          <p className="text-[#FF4757] text-xs font-bold tracking-[0.3em] uppercase mb-4 sm:mb-6">
             ✦ Let's Work Together
           </p>
 
           <h2
-            className={`uppercase leading-none mb-8 ${isDark ? "text-white" : "text-black"}`}
-            style={{ fontFamily: "'Sora', sans-serif", fontWeight: 900, fontSize: "clamp(2.2rem, 6vw, 4rem)" }}
+            className={`uppercase leading-tight mb-6 sm:mb-8 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold ${isDark ? "text-white" : "text-black"}`}
+            style={{ fontFamily: "'Sora', sans-serif" }}
           >
             INTERESTED IN
             <br />
@@ -178,23 +188,23 @@ export function BlogDetail({ isDark }: BlogDetailProps) {
           </h2>
 
           {/* Email */}
-          <motion.a
-            href="mailto:muhammadmoaz459@gmail.com"
-            whileHover={{ scale: 1.03 }}
-            className={`inline-flex items-center gap-3 transition-colors duration-200 mb-12 group ${
-              isDark ? "text-white/80 hover:text-white" : "text-gray-600 hover:text-black"
-            }`}
-          >
-            <Mail size={18} className="text-[#FF4757]" />
-            <span
-              className={`text-lg md:text-xl border-b ${
-                isDark ? "border-white/20 group-hover:border-white/60" : "border-gray-300 group-hover:border-gray-600"
-              } transition-colors pb-1`}
-              style={{ fontFamily: "'Sora', sans-serif", fontWeight: 300, letterSpacing: "0.05em" }}
+          <div className="mb-8 sm:mb-12">
+            <motion.a
+              href="mailto:muhammadmoaz459@gmail.com"
+              whileHover={{ scale: 1.03 }}
+              className={`inline-flex items-center gap-2 sm:gap-3 transition-colors duration-200 group ${isDark ? "text-white/80 hover:text-white" : "text-gray-600 hover:text-black"
+                }`}
             >
-              muhammadmoaz459@gmail.com
-            </span>
-          </motion.a>
+              <Mail size={16} className="text-[#FF4757] flex-shrink-0" />
+              <span
+                className={`text-sm sm:text-base md:text-lg lg:text-xl border-b break-all ${isDark ? "border-white/20 group-hover:border-white/60" : "border-gray-300 group-hover:border-gray-600"
+                  } transition-colors pb-1`}
+                style={{ fontFamily: "'Sora', sans-serif", fontWeight: 300, letterSpacing: "0.05em" }}
+              >
+                muhammadmoaz459@gmail.com
+              </span>
+            </motion.a>
+          </div>
 
           {/* CTA Buttons */}
           <motion.div
@@ -202,11 +212,11 @@ export function BlogDetail({ isDark }: BlogDetailProps) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.3, duration: 0.6 }}
-            className="flex flex-wrap items-center justify-center gap-4"
+            className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 w-full max-w-xs sm:max-w-none mx-auto"
           >
             <a
               href="mailto:muhammadmoaz459@gmail.com"
-              className="inline-flex items-center gap-2 bg-[#FF4757] text-white px-8 py-4 font-bold hover:bg-red-500 transition-colors uppercase tracking-wider text-xs rounded"
+              className="w-full sm:w-auto text-center inline-flex items-center justify-center gap-2 bg-[#FF4757] text-white px-6 sm:px-8 py-3.5 sm:py-4 font-bold hover:bg-red-500 transition-colors uppercase tracking-wider text-xs rounded"
             >
               <MessageCircle size={14} />
               Let's Talk
@@ -215,26 +225,23 @@ export function BlogDetail({ isDark }: BlogDetailProps) {
             <a
               href="/MaazCv.pdf"
               download="Muhammad_Moaz_CV.pdf"
-              className={`inline-flex items-center gap-2 border-2 px-8 py-4 font-bold uppercase tracking-wider text-xs rounded transition-all ${
-                isDark
-                  ? "border-white/30 text-white hover:border-white hover:bg-white hover:text-black"
-                  : "border-gray-400 text-black hover:border-black hover:bg-black hover:text-white"
-              }`}
+              className={`w-full sm:w-auto text-center inline-flex items-center justify-center gap-2 border-2 px-6 sm:px-8 py-3.5 sm:py-4 font-bold uppercase tracking-wider text-xs rounded transition-all ${isDark
+                ? "border-white/30 text-white hover:border-white hover:bg-white hover:text-black"
+                : "border-gray-400 text-black hover:border-black hover:bg-black hover:text-white"
+                }`}
             >
               Download CV
             </a>
 
             <a
               href="mailto:muhammadmoaz459@gmail.com"
-              className="inline-flex items-center gap-2 bg-[#0099FF] text-white px-8 py-4 font-bold hover:bg-blue-600 transition-colors uppercase tracking-wider text-xs rounded"
+              className="w-full sm:w-auto text-center inline-flex items-center justify-center gap-2 bg-[#0099FF] text-white px-6 sm:px-8 py-3.5 sm:py-4 font-bold hover:bg-blue-600 transition-colors uppercase tracking-wider text-xs rounded"
             >
               Hire Me
             </a>
           </motion.div>
         </div>
       </motion.section>
-
-      
     </div>
   );
 }

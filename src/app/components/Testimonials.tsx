@@ -12,7 +12,7 @@ const testimonials = [
     name: "Marcus Johnson",
     role: "CEO, TechStart Inc.",
     image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=200",
-    text: "Alex delivered our e-commerce platform ahead of schedule. The code quality is exceptional and the UI is beautiful. Our conversion rate increased by 40% after launch. Highly recommended!",
+    text: "Muhammad Moaz delivered our e-commerce platform ahead of schedule. The code quality is exceptional and the UI is beautiful. Our conversion rate increased by 40% after launch. Highly recommended!",
     rating: 5,
   },
   {
@@ -20,7 +20,7 @@ const testimonials = [
     name: "Sarah Williams",
     role: "Product Manager, DesignCo",
     image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=200",
-    text: "Working with Alex was an absolute pleasure. He translated our complex wireframes into a stunning, fully responsive web app. His attention to detail and communication are top-notch.",
+    text: "Working with Muhammad Moaz was an absolute pleasure. He translated our complex wireframes into a stunning, fully responsive web app. His attention to detail and communication are top-notch.",
     rating: 5,
   },
   {
@@ -28,7 +28,7 @@ const testimonials = [
     name: "David Chen",
     role: "Founder, AgencyX",
     image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=200",
-    text: "Alex rebuilt our agency website from scratch and the results blew us away. Load time went from 6s to under 1s. Our clients constantly compliment the new design. Will definitely hire again.",
+    text: "Muhammad Moaz rebuilt our agency website from scratch and the results blew us away. Load time went from 6s to under 1s. Our clients constantly compliment the new design. Will definitely hire again.",
     rating: 5,
   },
 ];

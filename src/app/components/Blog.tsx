@@ -42,7 +42,7 @@ export function Blog({ isDark }: BlogProps) {
             ✦ Blog
           </p>
           <h2
-            className="uppercase leading-tight md:leading-none text-4xl sm:text-5xl md:text-5xl lg:text-6xl font-bold"
+            className="uppercase leading-tight md:leading-none text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold"
           >
             LATEST NEWS FROM
             <br />
